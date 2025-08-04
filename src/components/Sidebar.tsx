@@ -47,7 +47,7 @@ export default function Sidebar({ mobileOpen, onClose }: { mobileOpen: boolean; 
       <Drawer
         variant="permanent"
         sx={{
-          display: { xs: "none", sm: "block" },
+          display: { xs: "none", sm: "block", },
           "& .MuiDrawer-paper": { width: drawerWidth, boxSizing: "border-box" }
         }}
         open
