@@ -20,14 +20,18 @@ const StatCard = styled(Paper)(({ theme }) => ({
   alignItems: "center",
   width: "200px",
   height: "200px",
-  borderRadius: 4,
-  boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
+  borderRadius: 10,
+  background:
+    theme.palette.mode === "light"
+      ? "rgba(255, 255, 255, 0.15)" // light mode glass
+      : "rgba(255, 255, 255, 0.05)", // dark mode glass
   backdropFilter: "blur(12px)",
-  background: "linear-gradient(to right, #18CFB4, #1a73e8)",
+  border: "1px solid rgba(255, 255, 255, 0.18)",
+  boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
   transition: "transform 0.2s ease, box-shadow 0.2s ease",
   "&:hover": {
     transform: "translateY(-2px)",
-    boxShadow: "0 8px 25px rgba(0,0,0,0.1)",
+    boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
     cursor: "pointer"
   }
 }));
@@ -38,10 +42,21 @@ export default function StatCards() {
       {stats.map((stat) => (
         <Grid item xs={12} sm={6} md={3} key={stat.label}>
           <StatCard>
-            <Typography variant="subtitle2" color="textSecondary" fontWeight={500}>
+            {/* Label text */}
+            <Typography
+              variant="subtitle2"
+              fontWeight={500}
+              sx={(theme) => ({
+                color:
+                  stat.label === "Active Subs" && theme.palette.mode === "dark"
+                    ? "#fff"
+                    : theme.palette.text.secondary
+              })}
+            >
               {stat.label}
             </Typography>
 
+            {/* Active Subs special case */}
             {stat.label === "Active Subs" ? (
               <Box sx={{ position: "relative", display: "inline-flex", mt: 1 }}>
                 <CircularProgress
@@ -49,7 +64,7 @@ export default function StatCards() {
                   value={72} // example %
                   size={80}
                   thickness={5}
-                  sx={{ color: "#fff" }}
+                  sx={{ color: "#A05AFF" }}
                 />
                 <Box
                   sx={{
@@ -63,13 +78,26 @@ export default function StatCards() {
                     justifyContent: "center"
                   }}
                 >
-                  <Typography variant="subtitle1" component="div" color="#fff">
+                  <Typography
+                    variant="subtitle1"
+                    component="div"
+                    sx={(theme) => ({
+                      color:
+                        theme.palette.mode === "dark" ? "#fff" : theme.palette.text.primary
+                    })}
+                  >
                     {`72%`}
                   </Typography>
                 </Box>
               </Box>
             ) : (
-              <Typography variant="h5" fontWeight={500}>
+              <Typography
+                variant="h5"
+                fontWeight={500}
+                sx={(theme) => ({
+                  color: theme.palette.text.primary
+                })}
+              >
                 {stat.value}
               </Typography>
             )}
