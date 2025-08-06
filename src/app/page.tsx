@@ -76,10 +76,12 @@ export default function DashboardPage() {
             top: { md: 80 },
           }}
         >
-
           {/* Mini Pie Chart */}
+
           <MiniPieChart />
+
           {/* Top Products Data */}
+
           <TopProducts />
         </Grid>
       </Grid>
