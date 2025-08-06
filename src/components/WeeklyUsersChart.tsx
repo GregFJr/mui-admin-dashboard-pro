@@ -27,7 +27,7 @@ export default function WeeklyUsersChart() {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Line type="monotone" dataKey="users" stroke="#1976d2" strokeWidth={2} />
+          <Line type="monotone" dataKey="users" stroke="#A05AFF" strokeWidth={2} />
         </LineChart>
       </ResponsiveContainer>
     </Paper>
