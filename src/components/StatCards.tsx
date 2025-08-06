@@ -9,7 +9,7 @@ const stats = [
   { label: "Total Users", value: "1,245" },
   { label: "Orders Today", value: "312" },
   { label: "Avg Spend / User", value: "$4.36" },
-  { label: "Active Subs", value: "876" }
+  { label: "Active Subs", value: "876" },
 ];
 
 // ---- Styled Components ----
@@ -32,8 +32,8 @@ const StatCard = styled(Paper)(({ theme }) => ({
   "&:hover": {
     transform: "translateY(-2px)",
     boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
-    cursor: "pointer"
-  }
+    cursor: "pointer",
+  },
 }));
 
 export default function StatCards() {
@@ -50,7 +50,7 @@ export default function StatCards() {
                 color:
                   stat.label === "Active Subs" && theme.palette.mode === "dark"
                     ? "#fff"
-                    : theme.palette.text.secondary
+                    : theme.palette.text.secondary,
               })}
             >
               {stat.label}
@@ -75,7 +75,7 @@ export default function StatCards() {
                     position: "absolute",
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center"
+                    justifyContent: "center",
                   }}
                 >
                   <Typography
@@ -83,7 +83,9 @@ export default function StatCards() {
                     component="div"
                     sx={(theme) => ({
                       color:
-                        theme.palette.mode === "dark" ? "#fff" : theme.palette.text.primary
+                        theme.palette.mode === "dark"
+                          ? "#fff"
+                          : theme.palette.text.primary,
                     })}
                   >
                     {`72%`}
@@ -95,7 +97,7 @@ export default function StatCards() {
                 variant="h5"
                 fontWeight={500}
                 sx={(theme) => ({
-                  color: theme.palette.text.primary
+                  color: theme.palette.text.primary,
                 })}
               >
                 {stat.value}

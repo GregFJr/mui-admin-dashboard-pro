@@ -11,12 +11,14 @@ import {
   CartesianGrid,
   ResponsiveContainer,
   BarChart,
-  Bar
+  Bar,
 } from "recharts";
 import StatCards from "@/components/StatCards";
 import RecentOrders from "@/components/RecentOrders";
 import TopProducts from "@/components/TopProducts";
 import MiniPieChart from "@/components/MiniPieChart";
+import WeeklyUsersChart from "@/components/WeeklyUsersChart";
+import SpendByDayChart from "@/components/SpendByDayChart";
 
 // ---- Mock Data ----
 const chartData = [
@@ -26,7 +28,7 @@ const chartData = [
   { name: "Thu", users: 1200 },
   { name: "Fri", users: 900 },
   { name: "Sat", users: 1400 },
-  { name: "Sun", users: 1000 }
+  { name: "Sun", users: 1000 },
 ];
 
 const spendByDay = [
@@ -36,7 +38,7 @@ const spendByDay = [
   { day: "Thu", spend: 6.15 },
   { day: "Fri", spend: 5.9 },
   { day: "Sat", spend: 7.25 },
-  { day: "Sun", spend: 6.5 }
+  { day: "Sun", spend: 6.5 },
 ];
 
 export default function DashboardPage() {
@@ -53,41 +55,12 @@ export default function DashboardPage() {
           <StatCards />
 
           {/* Weekly Active Users Chart */}
-          <Paper sx={{ p: 2, borderRadius: 0.5, height: 350, mb: 3 }}>
-            <Typography variant="h6" gutterBottom>
-              Weekly Active Users
-            </Typography>
-            <ResponsiveContainer width="100%" height="90%">
-              <LineChart data={chartData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Line
-                  type="monotone"
-                  dataKey="users"
-                  stroke="#1976d2"
-                  strokeWidth={2}
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          </Paper>
+
+          <WeeklyUsersChart />
 
           {/* Average Spend by Day of Week */}
-          <Paper sx={{ p: 2, borderRadius: 0.5, height: 350, mb: 3 }}>
-            <Typography variant="h6" gutterBottom>
-              Average Spend by Day of Week
-            </Typography>
-            <ResponsiveContainer width="100%" height="90%">
-              <BarChart data={spendByDay}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="day" />
-                <YAxis />
-                <Tooltip formatter={(value: number) => `$${value.toFixed(2)}`} />
-                <Bar dataKey="spend" fill="#A05AFF" />
-              </BarChart>
-            </ResponsiveContainer>
-          </Paper>
+
+          <SpendByDayChart />
 
           {/* Recent Orders */}
           <RecentOrders />
@@ -100,10 +73,13 @@ export default function DashboardPage() {
           md={3}
           sx={{
             position: { md: "sticky" },
-            top: { md: 80 }
+            top: { md: 80 },
           }}
         >
+
+          {/* Mini Pie Chart */}
           <MiniPieChart />
+          {/* Top Products Data */}
           <TopProducts />
         </Grid>
       </Grid>

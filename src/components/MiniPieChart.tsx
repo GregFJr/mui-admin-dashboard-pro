@@ -1,19 +1,13 @@
 "use client";
 
 import { Paper, Typography } from "@mui/material";
-import {
-  PieChart,
-  Pie,
-  Cell,
-  ResponsiveContainer,
-  Tooltip
-} from "recharts";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 
 // Example data
 const data = [
   { name: "New Users", value: 400 },
   { name: "Returning Users", value: 300 },
-  { name: "Guest Users", value: 200 }
+  { name: "Guest Users", value: 200 },
 ];
 
 const COLORS = ["#1976d2", "#A05AFF", "#18CFB4"];
@@ -30,7 +24,7 @@ export default function MiniPieChart() {
             ? "rgba(255, 255, 255, 0.15)"
             : "rgba(255, 255, 255, 0.05)",
         backdropFilter: "blur(12px)",
-        border: "1px solid rgba(255, 255, 255, 0.18)"
+        border: "1px solid rgba(255, 255, 255, 0.18)",
       }}
     >
       <Typography variant="h6" gutterBottom>
