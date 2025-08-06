@@ -17,7 +17,7 @@ const spendByDay = [
 
 export default function SpendByDayChart() {
   return (
-    <Paper sx={{ p: 2, borderRadius: 0.5, height: 350, mb: 3 }}>
+    <Paper sx={{ p: 2, borderRadius: 2, height: 350, mb: 3 }}>
       <Typography variant="h6" gutterBottom>
         Average Spend by Day of Week
       </Typography>

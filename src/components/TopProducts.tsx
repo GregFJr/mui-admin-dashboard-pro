@@ -12,7 +12,7 @@ const topProducts = [
 
 export default function TopProducts() {
   return (
-    <Paper sx={{ p: 2, borderRadius: .5 }}>
+    <Paper sx={{ p: 2, borderRadius: 2 }}>
       <Typography variant="h6" gutterBottom>
         Top Products
       </Typography>

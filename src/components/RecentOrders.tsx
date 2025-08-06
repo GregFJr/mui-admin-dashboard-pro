@@ -20,7 +20,7 @@ const orders = [
 
 export default function RecentOrders() {
   return (
-    <Paper sx={{ p: 2, borderRadius: .5 }}>
+    <Paper sx={{ p: 2, borderRadius: 2 }}>
       <Typography variant="h6" gutterBottom>
         Recent Orders
       </Typography>
