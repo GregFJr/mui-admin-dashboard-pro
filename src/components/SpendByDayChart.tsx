@@ -1,17 +1,24 @@
 "use client";
 
 import { Paper, Typography } from "@mui/material";
-import { styled } from "@mui/material/styles"
+import { styled } from "@mui/material/styles";
 import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  CartesianGrid,
+  ResponsiveContainer,
 } from "recharts";
 
 const GlassChartCard = styled(Paper)(({ theme }) => ({
   borderRadius: 10,
   backdropFilter: "blur(12px)",
-  background: theme.palette.mode === "light"
-    ? "rgba(255, 255, 255, 0.15)"
-    : "rgba(255, 255, 255, 0.05)",
+  background:
+    theme.palette.mode === "light"
+      ? "rgba(255, 255, 255, 0.15)"
+      : "rgba(255, 255, 255, 0.05)",
   border: "1px solid rgba(255, 255, 255, 0.18)",
   boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
   padding: theme.spacing(2),
@@ -21,23 +28,23 @@ const GlassChartCard = styled(Paper)(({ theme }) => ({
   "&:hover": {
     transform: "translateY(-2px)",
     boxShadow: "0 8px 25px rgba(0,0,0,0.15)",
-    cursor: "pointer"
-  }
+    cursor: "pointer",
+  },
 }));
 
 const spendByDay = [
   { day: "Mon", spend: 4.25 },
-  { day: "Tue", spend: 5.10 },
-  { day: "Wed", spend: 4.80 },
+  { day: "Tue", spend: 5.1 },
+  { day: "Wed", spend: 4.8 },
   { day: "Thu", spend: 6.15 },
-  { day: "Fri", spend: 5.90 },
+  { day: "Fri", spend: 5.9 },
   { day: "Sat", spend: 7.25 },
-  { day: "Sun", spend: 6.50 }
+  { day: "Sun", spend: 6.5 },
 ];
 
 export default function SpendByDayChart() {
   return (
-<GlassChartCard>
+    <GlassChartCard>
       <Typography variant="h6" gutterBottom>
         Average Spend by Day of Week
       </Typography>
@@ -50,6 +57,6 @@ export default function SpendByDayChart() {
           <Bar dataKey="spend" fill="#A05AFF" />
         </BarChart>
       </ResponsiveContainer>
-</GlassChartCard>
+    </GlassChartCard>
   );
 }

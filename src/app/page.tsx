@@ -19,6 +19,7 @@ import TopProducts from "@/components/TopProducts";
 import MiniPieChart from "@/components/MiniPieChart";
 import WeeklyUsersChart from "@/components/WeeklyUsersChart";
 import SpendByDayChart from "@/components/SpendByDayChart";
+import TeamMemberCard from "@/components/TeamMemberCard";
 
 // ---- Mock Data ----
 const chartData = [
@@ -50,7 +51,7 @@ export default function DashboardPage() {
 
       <Grid container spacing={3}>
         {/* ---- Main Content ---- */}
-        <Grid item xs={12} md={9}>
+        <Grid xs={12} md={9}>
           {/* Stat Cards */}
           <StatCards />
 
@@ -68,7 +69,6 @@ export default function DashboardPage() {
 
         {/* ---- Right Sidebar ---- */}
         <Grid
-          item
           xs={12}
           md={3}
           sx={{
@@ -83,6 +83,12 @@ export default function DashboardPage() {
           {/* Top Products Data */}
 
           <TopProducts />
+
+          <Grid xs={12} sm={6}>
+            {/* Team Member Card */}
+
+            <TeamMemberCard />
+          </Grid>
         </Grid>
       </Grid>
     </Box>

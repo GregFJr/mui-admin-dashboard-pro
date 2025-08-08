@@ -1,21 +1,36 @@
-import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, Typography, Avatar, Box } from "@mui/material";
+import {
+  Drawer,
+  List,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Typography,
+  Avatar,
+  Box,
+} from "@mui/material";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import PeopleIcon from "@mui/icons-material/People";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SettingsIcon from "@mui/icons-material/Settings";
-import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import PersonIcon from '@mui/icons-material/Person';
+import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
+import PersonIcon from "@mui/icons-material/Person";
 
 const menuItems = [
   { text: "Dashboard", icon: <DashboardIcon />, path: "/" },
   { text: "Users", icon: <PeopleIcon />, path: "/users" },
   { text: "Products", icon: <InventoryIcon />, path: "/products" },
   { text: "Orders", icon: <ShoppingCartIcon />, path: "/orders" },
-  { text: "Settings", icon: <SettingsIcon />, path: "/settings" }
+  { text: "Settings", icon: <SettingsIcon />, path: "/settings" },
 ];
 
-export default function Sidebar({ mobileOpen, onClose }: { mobileOpen: boolean; onClose: () => void }) {
+export default function Sidebar({
+  mobileOpen,
+  onClose,
+}: {
+  mobileOpen: boolean;
+  onClose: () => void;
+}) {
   const drawerWidth = 240;
 
   const drawer = (
@@ -31,7 +46,7 @@ export default function Sidebar({ mobileOpen, onClose }: { mobileOpen: boolean; 
 
   return (
     <>
-    <Typography>Profile</Typography>
+      <Typography>Profile</Typography>
       {/* Mobile Drawer */}
       <Drawer
         variant="temporary"
@@ -40,7 +55,7 @@ export default function Sidebar({ mobileOpen, onClose }: { mobileOpen: boolean; 
         ModalProps={{ keepMounted: true }}
         sx={{
           display: { xs: "block", sm: "none" },
-          "& .MuiDrawer-paper": { width: drawerWidth }
+          "& .MuiDrawer-paper": { width: drawerWidth },
         }}
       >
         {drawer}
@@ -50,33 +65,29 @@ export default function Sidebar({ mobileOpen, onClose }: { mobileOpen: boolean; 
       <Drawer
         variant="permanent"
         sx={{
-          display: { xs: "none", sm: "block", },
-          "& .MuiDrawer-paper": { width: drawerWidth, boxSizing: "border-box" }
+          display: { xs: "none", sm: "block" },
+          "& .MuiDrawer-paper": { width: drawerWidth, boxSizing: "border-box" },
         }}
         open
-      > 
-
-      <Box sx={{
-        display: "flex",
-        alignItems: "center",
-        flexDirection: "column",
-        py: 2,
-        borderBottom: "1px solid rgba(0, 0, 0, 0.1)"
-      }}>
-
-        <Avatar 
+      >
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+            py: 2,
+            borderBottom: "1px solid rgba(0, 0, 0, 0.1)",
+          }}
+        >
+          <Avatar
             alt="Greg FInney"
             src="/avatar.jpg"
-            sx={{ width: 64, height: 64, mb: 1, bgcolor: 'primary.main' }} 
-            >
-              
-              <PersonIcon />
-      
-            </Avatar>
-              <VerifiedUserIcon fontSize="small" color="primary" />
-
-
-      </Box>
+            sx={{ width: 64, height: 64, mb: 1, bgcolor: "primary.main" }}
+          >
+            <PersonIcon />
+          </Avatar>
+          <VerifiedUserIcon fontSize="small" color="primary" />
+        </Box>
         {drawer}
       </Drawer>
     </>
