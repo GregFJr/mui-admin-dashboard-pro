@@ -15,6 +15,10 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SettingsIcon from "@mui/icons-material/Settings";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import PersonIcon from "@mui/icons-material/Person";
+import AnalyticsIcon from "@mui/icons-material/Analytics";
+import GroupIcon from "@mui/icons-material/Group";
+import MessageIcon from "@mui/icons-material/Message";
+
 
 const menuItems = [
   { text: "Dashboard", icon: <DashboardIcon />, path: "/" },
@@ -22,6 +26,9 @@ const menuItems = [
   { text: "Products", icon: <InventoryIcon />, path: "/products" },
   { text: "Orders", icon: <ShoppingCartIcon />, path: "/orders" },
   { text: "Settings", icon: <SettingsIcon />, path: "/settings" },
+  { text: "Analytics", icon: <AnalyticsIcon />, path: "/analytics" },
+  { text: "Customers", icon: <GroupIcon />, path: "/customers" },
+  {text: "Messages", icon: <MessageIcon />, path: "/messages" }
 ];
 
 export default function Sidebar({
