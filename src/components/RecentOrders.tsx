@@ -15,7 +15,8 @@ const orders = [
   { id: "ORD-1001", customer: "John Smith", date: "2025-08-01", amount: "$120.50", status: "Shipped" },
   { id: "ORD-1002", customer: "Sarah Johnson", date: "2025-08-01", amount: "$75.20", status: "Pending" },
   { id: "ORD-1003", customer: "David Lee", date: "2025-07-31", amount: "$210.00", status: "Delivered" },
-  { id: "ORD-1004", customer: "Emma Wilson", date: "2025-07-30", amount: "$54.99", status: "Cancelled" }
+  { id: "ORD-1004", customer: "Emma Wilson", date: "2025-07-30", amount: "$54.99", status: "Cancelled" },
+  { id: "ORD-1005", customer: "Jane Smith", date: "2025-07-30", amount: "$54.99", status: "Pending" },
 ];
 
 export default function RecentOrders() {

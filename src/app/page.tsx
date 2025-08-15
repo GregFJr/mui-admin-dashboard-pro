@@ -72,23 +72,16 @@ export default function DashboardPage() {
           xs={12}
           md={3}
           sx={{
-            position: { md: "sticky" },
+
             top: { md: 80 },
           }}
         >
           {/* Mini Pie Chart */}
-
           <MiniPieChart />
-
           {/* Top Products Data */}
-
           <TopProducts />
-
-          <Grid xs={12} sm={6}>
-            {/* Team Member Card */}
-
-            <TeamMemberCard />
-          </Grid>
+          {/* Team Member Card */}
+          <TeamMemberCard />
         </Grid>
       </Grid>
     </Box>

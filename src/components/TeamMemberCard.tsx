@@ -53,12 +53,6 @@ export default function TeamMemberCard() {
       title: "Frontend Dev",
       handle: "@arthur",
     },
-    {
-      name: "Devontae Smith",
-      initials: "DS",
-      title: "Sales Manager",
-      handle: "@devontae",
-    },
   ];
 
   return (
@@ -67,8 +61,8 @@ export default function TeamMemberCard() {
         p: 2,
         borderRadius: 2,
         width: 360,
-        mt: 3,
         maxWidth: "100%",
+        mt: 3,
         background: (theme) =>
           theme.palette.mode === "light"
             ? "rgba(255, 255, 255, 0.15)"
